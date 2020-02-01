@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Questions from './Containers/Questions';
+import Questions from './Containers/Introduction';
 import { persistor, store } from './store/configureStore';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react';
