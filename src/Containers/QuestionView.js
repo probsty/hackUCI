@@ -14,7 +14,9 @@ class QuestionView extends React.Component {
         }
 
         this.onSelectChoice = this.onSelectChoice.bind(this);
-        this.onBackButtonClick = this.onBackButtonClick.bind(this);
+        this.onBackButton = this.onBackButton.bind(this);
+        this.onNextButton = this.onNextButton.bind(this);
+        
     }
 
     onSelectChoice(e) {
@@ -36,11 +38,25 @@ class QuestionView extends React.Component {
             type: actions.NEXT_QUESTION,
         };
 
+        if (!this.props.currentAnswers[this.props.question.id]) {
+            dispatch(nextQuestionAction);
+        }
         dispatch(answerAction);
-        dispatch(nextQuestionAction);
+
+        
     }
 
-    onBackButtonClick(e) {
+    onNextButton(e) {
+        const { dispatch } = this.props;
+
+        const nextQuestionAction = {
+            type: actions.NEXT_QUESTION,
+        }
+
+        dispatch(nextQuestionAction)
+    }
+
+    onBackButton(e) {
         const { dispatch } = this.props;
 
         const previousQuestionAction = {
@@ -58,10 +74,18 @@ class QuestionView extends React.Component {
         let choices = question.choices;
         let questionText = question.text;
         let questionButtons = choices.map((text, index) => {
+
+            let baseClassName = "buttonAnswer button-1";
+
+            // Highlight selected choice
+            if (text === this.props.currentAnswers[this.props.question.id]) {
+                baseClassName += " selectedChoice";
+            }
+
             return (
                 <li className="grid-item" key={index}>
                     <div 
-                        className="buttonAnswer button-1"
+                        className={baseClassName}
                         onClick={this.onSelectChoice}
                     >
                         {text}
@@ -70,18 +94,44 @@ class QuestionView extends React.Component {
             )
         });
 
+        let nextButton = undefined;
+        if (this.props.currentAnswers[this.props.question.id]) {
+            nextButton = (
+                <div
+                        className="button-1 buttonSecondary alignRight"
+                        onClick={this.onNextButton}
+                    >
+                        Next
+                    </div>
+            );
+        }
+
+        let backButton = undefined;
+        if (this.props.questionIndex > 0) {
+            backButton = (
+                <div
+                    className="button-1 buttonSecondary"
+                    onClick={this.onBackButton}
+                >
+                    Previous
+                </div>
+            );
+        }
+
+                                //<div className="filler-block button-1 buttonSecondary">T</div>
+
+
         return (
             <div>
-                <div>
-                    <div
-                        className="button-1 buttonSecondary"
-                        onClick={this.onBackButtonClick}
-                    >
-                        Previous
+                <div className="navbar-container">
+                    <div className="navbar">
+                        {backButton}
+                        {nextButton}
                     </div>
                 </div>
-                <div>
-                    <h2 className="textMainMessage AkzidenzGrotesk-BoldCond">
+                
+                <div className="questionContainer">
+                    <h2 className="AkzidenzGrotesk-BoldCond">
                         {`Question ${questionNumber} / ${totalQuestions}`}
                     </h2>
                     <h3
@@ -104,7 +154,8 @@ class QuestionView extends React.Component {
 
 const mapStateToProps = (state) => ({
     question: state.current_question,
-    questionIndex: state.current_question_index
+    questionIndex: state.current_question_index,
+    currentAnswers: state.user_answers,
 });
 
 export default connect(mapStateToProps)(QuestionView);
