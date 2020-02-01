@@ -13,7 +13,6 @@ function App() {
           <PersistGate persistor={persistor} loading={""}>
               <Router basename="/">
                 <Route exact path="/" component={QuestionView} />
-                  <Route exact path="/newPage" component={NewPage} />
               </Router>
           </PersistGate>
       </Provider>
