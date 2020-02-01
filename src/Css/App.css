@@ -27,10 +27,25 @@ body {
     transform: translate(-50%, -50%)
 }
 
+.questionContainer {
+    color: aliceblue;
+    text-align: center;
+    font-size: 10vh;
+}
+
+.questionContainer h2, .questionContainer h3 {
+    margin: 0;
+}
+
+.questionContainer h2 {
+    font-size: 6vh;
+    margin: 10px;
+}
+
 .questionText {
     color: white;
     text-align: center;
-    font-size: 5vh;
+    font-size: 8vh;
 }
 
 .choiceList {
