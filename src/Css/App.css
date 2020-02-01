@@ -76,3 +76,7 @@ body {
 .navbar div {
     display: inline-block;
 }
+
+.marginBottom {
+    margin-bottom: 5%;
+}

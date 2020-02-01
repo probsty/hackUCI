@@ -17,7 +17,7 @@ const initialState = {
 
     current_question: userQuestions[0],
     current_question_index: 0,
-
+    questions: userQuestions,
     resultCars: [],
 
 };
@@ -63,7 +63,7 @@ function service(state = initialState, action) {
                     current_question_index : new_question_index,
                 });
             }
-            
+
         default:
             return state;
     }

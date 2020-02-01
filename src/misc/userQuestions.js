@@ -23,6 +23,17 @@ const userQuestions = [
             "The sky.",
         ]
     ),
+
+    new Question(
+        2,
+        "Type of car",
+        [
+            "big",
+            "small",
+            "medium!",
+            "sport?",
+        ]
+    ),
 ]
 
 export default userQuestions

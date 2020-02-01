@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import '../Css/ButtonNeon.css'
 import '../Css/GridList.css'
+import '../Css/ProgressBar.css'
 import actions from '../store/action_types';
 import userQuestions from '../misc/userQuestions';
 
@@ -27,7 +28,7 @@ class QuestionView extends React.Component {
         const payload = {
             question_id: this.props.question.id,
             answer: userAnswer,
-        }
+        };
 
         const answerAction = {
             type: actions.ANSWER_QUESTION,
@@ -61,7 +62,7 @@ class QuestionView extends React.Component {
 
         const previousQuestionAction = {
             type: actions.PREVIOUS_QUESTION,
-        }
+        };
 
         dispatch(previousQuestionAction)
     }
@@ -70,7 +71,7 @@ class QuestionView extends React.Component {
         let question = this.props.question;
         let questionNumber = this.props.questionIndex + 1;
         let totalQuestions = userQuestions.length;
-        
+
         let choices = question.choices;
         let questionText = question.text;
         let questionButtons = choices.map((text, index) => {
@@ -92,6 +93,13 @@ class QuestionView extends React.Component {
                     </div>
                 </li>
             )
+        });
+        let progressBar = this.props.questions.map((text, index) => {
+            if (index + 1 <= this.props.questionIndex) {
+                return (<li className="active" key={index + 1}/>)
+            } else {
+                return (<li key={index + 1}/>)
+            }
         });
 
         let nextButton = undefined;
@@ -134,19 +142,20 @@ class QuestionView extends React.Component {
                     <h2 className="AkzidenzGrotesk-BoldCond">
                         {`Question ${questionNumber} / ${totalQuestions}`}
                     </h2>
-                    <h3
-                        className="questionText"
-                    >
-                        {questionText}
-                    </h3>
+                    <h3 className="questionText">{questionText}</h3>
                 </div>
                 <div className="table red">
                     <ul className="grid-container">
                         {questionButtons}
                     </ul>
                 </div>
-
-
+                <div className="marginBottom">
+                    <div className=" container">
+                        <ul className="progressbar">
+                         {progressBar}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -156,6 +165,7 @@ const mapStateToProps = (state) => ({
     question: state.current_question,
     questionIndex: state.current_question_index,
     currentAnswers: state.user_answers,
+    questions: state.questions,
 });
 
 export default connect(mapStateToProps)(QuestionView);
