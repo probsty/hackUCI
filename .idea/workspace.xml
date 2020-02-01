@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57e3e4df-7d98-458d-a496-df8e9de7a9c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/storeReducers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Containers/NewPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Introduction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/Introduction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Introduction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/Questions.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,25 +104,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580535722043" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580537406840">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580540826035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580537406840" />
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580539119095">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580540826035" />
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580541177092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580539119095" />
-    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580539119095">
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580541177092" />
+    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580541177092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580539119095" />
-    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580539119095">
+    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580541177092" />
+    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580541177092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580539119095" />
-    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580539119095">
+    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580541177092" />
+    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580541177092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580539119095" />
+    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580541177092" />
   </component>
 </project>

@@ -10,11 +10,23 @@ class Introduction extends Component {
         this.state = {
         };
 
+        this.changeRoute = this.changeRoute.bind(this);
         this.fillDataRedux = this.fillDataRedux.bind(this);
 
     }
 
-    // / EXEMPLE: Fill the data in the redux store
+    /* Change the route of the web page
+    * the argument is the /newPath
+    * */
+    changeRoute(e) {
+        const { history } = this.props;
+
+        history.push(e);
+    }
+
+    /* Example to show you how to store data in the redux store
+    * (you can pass data as an argument)
+    * */
     fillDataRedux(e) {
         console.log("BEGINNING OF DISPLAY");
         console.log(this.props.test_test);
@@ -25,6 +37,7 @@ class Introduction extends Component {
             test: "i show you an exemple",
         };
         dispatch(action);
+        this.changeRoute("/newPage")
     }
 
     render() {
@@ -39,9 +52,11 @@ class Introduction extends Component {
     }
 }
 
+/* Mandatory method to get access to the redux data
+* use the data like: this.props.data
+* */
 const mapStateToProps = (state) => ({
     test_test: state.test_test,
 });
 
-// eslint-disable-next-line no-undef
 export default connect(mapStateToProps)(Introduction);
