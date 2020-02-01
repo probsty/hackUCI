@@ -17,7 +17,7 @@ class QuestionView extends React.Component {
         this.onSelectChoice = this.onSelectChoice.bind(this);
         this.onBackButton = this.onBackButton.bind(this);
         this.onNextButton = this.onNextButton.bind(this);
-        
+
     }
 
     onSelectChoice(e) {
@@ -44,7 +44,7 @@ class QuestionView extends React.Component {
         }
         dispatch(answerAction);
 
-        
+
     }
 
     onNextButton(e) {
@@ -85,7 +85,7 @@ class QuestionView extends React.Component {
 
             return (
                 <li className="grid-item" key={index}>
-                    <div 
+                    <div
                         className={baseClassName}
                         onClick={this.onSelectChoice}
                     >
@@ -106,7 +106,7 @@ class QuestionView extends React.Component {
         if (this.props.currentAnswers[this.props.question.id]) {
             nextButton = (
                 <div
-                        className="button-1 buttonSecondary alignRight"
+                        className="button-1 buttonSecondary alignRight rightCorner"
                         onClick={this.onNextButton}
                     >
                         Next
@@ -118,7 +118,7 @@ class QuestionView extends React.Component {
         if (this.props.questionIndex > 0) {
             backButton = (
                 <div
-                    className="button-1 buttonSecondary"
+                    className="button-1 buttonSecondary leftCorner"
                     onClick={this.onBackButton}
                 >
                     Previous
@@ -137,7 +137,7 @@ class QuestionView extends React.Component {
                         {nextButton}
                     </div>
                 </div>
-                
+
                 <div className="questionContainer">
                     <h2 className="AkzidenzGrotesk-BoldCond">
                         {`Question ${questionNumber} / ${totalQuestions}`}
