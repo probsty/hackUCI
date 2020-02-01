@@ -45,7 +45,7 @@ class Introduction extends Component {
             <div>
                 <div>
                     <h1 className="textMainMessage AkzidenzGrotesk-BoldCond">We help you decide your next car purchase !</h1>
-                    <div className="button button-1 alignContent" onClick={this.fillDataRedux}>Start</div>
+                    <div className="button button-1 alignStartContent" onClick={this.fillDataRedux}>Start</div>
                 </div>
             </div>
         );

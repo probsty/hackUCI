@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Css/ButtonNeon.css'
+import '../Css/GridList.css'
 
 
 class QuestionView extends React.Component {
@@ -17,15 +18,15 @@ class QuestionView extends React.Component {
             'Hello',
             'Goodbye',
             'Hot Pink',
+            "Hi I'm BLANK (HackUCI)",
+            'Hot Pink',
             "Hi I'm BLANK (HackUCI)"
         ]
         let questionText = "How long is your commute?"
         let questionButtons = choices.map((text, index) => {
             return (
-                <li key={index}>
-                    <div
-                        className="button button-1"
-                    >
+                <li className="grid-item" key={index}>
+                    <div className="buttonAnswer button-1">
                         {text}
                     </div>
                 </li>
@@ -44,15 +45,13 @@ class QuestionView extends React.Component {
                         {questionText}
                     </h3>
                 </div>
-                <div className="">
-                    <ul className="choiceList">
-                        <div className="alignContent">
+                <div className="table red">
+                    <ul className="grid-container">
                         {questionButtons}
-                        </div>
                     </ul>
-                </div> 
+                </div>
 
-                
+
             </div>
         );
     }
