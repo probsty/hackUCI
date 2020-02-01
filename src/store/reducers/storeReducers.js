@@ -12,7 +12,9 @@ function changeState(currentState, changes) {
 const initialState = {
     test_test: "",
 
-    user_answers: new Array(userQuestions.length),
+    // user_answers object is a "dictionary" where {question_id: user's answer}
+    user_answers: {},
+
     current_question: userQuestions[0],
     current_question_index: 0,
 
@@ -31,9 +33,10 @@ function service(state = initialState, action) {
             };
             return nextState;
         case actions.ANSWER_QUESTION:
-            let newAnswers = state.user_answers.slice();
-            newAnswers[state.current_question_index] = action.answer;
+            let newAnswers = Object.assign({}, state.user_answers)
+            newAnswers[action.payload.question_id] = action.payload.answer;
 
+            console.log(newAnswers)
             return changeState(state, {
                 user_answers: newAnswers,
             });

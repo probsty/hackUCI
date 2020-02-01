@@ -21,9 +21,14 @@ class QuestionView extends React.Component {
         console.log(`User selected: ${userAnswer}`);
         const { dispatch } = this.props;
 
+        const payload = {
+            question_id: this.props.question.id,
+            answer: userAnswer,
+        }
+
         const answerAction = {
             type: actions.ANSWER_QUESTION,
-            answer: userAnswer,
+            payload: payload,
         };
 
         const nextQuestionAction = {
@@ -57,6 +62,9 @@ class QuestionView extends React.Component {
 
         return (
             <div>
+                <div>
+                    
+                </div>
                 <div>
                     <h2 className="textMainMessage AkzidenzGrotesk-BoldCond">
                         {`Question ${questionNumber} / ${totalQuestions}`}
