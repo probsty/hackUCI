@@ -46,8 +46,14 @@
     transition: all .15s ease-in-out;
     color: #00d7c3;
 }
-.button-1:hover, .selectedChoice {
-    box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+
+.button-1:hover {
+    box-shadow: 0 0 15px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+    border: solid #00d7c3;
+}
+
+.selectedChoice {
+    box-shadow: 0 0 90px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
     border: solid #00d7c3;
 }
 

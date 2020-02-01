@@ -76,3 +76,17 @@ body {
 .navbar div {
     display: inline-block;
 }
+
+.marginBottom {
+    margin-bottom: 5%;
+}
+
+.leftCorner {
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.rightCorner {
+    margin-right: 1%;
+    margin-top: 1%;
+}

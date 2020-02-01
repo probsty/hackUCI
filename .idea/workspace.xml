@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57e3e4df-7d98-458d-a496-df8e9de7a9c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Css/GridList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Introduction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Introduction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/QuestionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/QuestionView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Css/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Css/ButtonNeon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Css/ButtonNeon.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +47,7 @@
       <recent name="C:\Users\yprob\OneDrive\Bureau\UCI\hackUCI\src\Css" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -66,6 +61,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.npm start" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -92,6 +102,7 @@
       <workItem from="1580527388022" duration="4184000" />
       <workItem from="1580532232060" duration="7090000" />
       <workItem from="1580542776585" duration="3884000" />
+      <workItem from="1580583256402" duration="7680000" />
     </task>
     <servers />
   </component>
@@ -99,6 +110,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580583283272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580583283272" />
     <state x="471" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580533143047">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -111,21 +126,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580540826035" />
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580546578588">
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580587673086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580546578588" />
-    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580546578588">
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
+    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580587673086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580546578588" />
-    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580546578587">
+    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
+    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580587673086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580546578587" />
-    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580546578588">
+    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
+    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580587673086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580546578588" />
+    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
+    <state x="462" y="144" width="611" height="536" key="find.popup" timestamp="1580587586000">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580587586000" />
   </component>
 </project>

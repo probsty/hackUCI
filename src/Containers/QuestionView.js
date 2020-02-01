@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import '../Css/ButtonNeon.css'
 import '../Css/GridList.css'
+import '../Css/ProgressBar.css'
 import actions from '../store/action_types';
 import userQuestions from '../misc/userQuestions';
 
@@ -16,7 +17,7 @@ class QuestionView extends React.Component {
         this.onSelectChoice = this.onSelectChoice.bind(this);
         this.onBackButton = this.onBackButton.bind(this);
         this.onNextButton = this.onNextButton.bind(this);
-        
+
     }
 
     onSelectChoice(e) {
@@ -27,7 +28,7 @@ class QuestionView extends React.Component {
         const payload = {
             question_id: this.props.question.id,
             answer: userAnswer,
-        }
+        };
 
         const answerAction = {
             type: actions.ANSWER_QUESTION,
@@ -43,7 +44,7 @@ class QuestionView extends React.Component {
         }
         dispatch(answerAction);
 
-        
+
     }
 
     onNextButton(e) {
@@ -61,7 +62,7 @@ class QuestionView extends React.Component {
 
         const previousQuestionAction = {
             type: actions.PREVIOUS_QUESTION,
-        }
+        };
 
         dispatch(previousQuestionAction)
     }
@@ -70,7 +71,7 @@ class QuestionView extends React.Component {
         let question = this.props.question;
         let questionNumber = this.props.questionIndex + 1;
         let totalQuestions = userQuestions.length;
-        
+
         let choices = question.choices;
         let questionText = question.text;
         let questionButtons = choices.map((text, index) => {
@@ -84,7 +85,7 @@ class QuestionView extends React.Component {
 
             return (
                 <li className="grid-item" key={index}>
-                    <div 
+                    <div
                         className={baseClassName}
                         onClick={this.onSelectChoice}
                     >
@@ -93,12 +94,19 @@ class QuestionView extends React.Component {
                 </li>
             )
         });
+        let progressBar = this.props.questions.map((text, index) => {
+            if (index + 1 <= this.props.questionIndex) {
+                return (<li className="active" key={index + 1}/>)
+            } else {
+                return (<li key={index + 1}/>)
+            }
+        });
 
         let nextButton = undefined;
         if (this.props.currentAnswers[this.props.question.id]) {
             nextButton = (
                 <div
-                        className="button-1 buttonSecondary alignRight"
+                        className="button-1 buttonSecondary alignRight rightCorner"
                         onClick={this.onNextButton}
                     >
                         Next
@@ -110,7 +118,7 @@ class QuestionView extends React.Component {
         if (this.props.questionIndex > 0) {
             backButton = (
                 <div
-                    className="button-1 buttonSecondary"
+                    className="button-1 buttonSecondary leftCorner"
                     onClick={this.onBackButton}
                 >
                     Previous
@@ -129,24 +137,25 @@ class QuestionView extends React.Component {
                         {nextButton}
                     </div>
                 </div>
-                
+
                 <div className="questionContainer">
                     <h2 className="AkzidenzGrotesk-BoldCond">
                         {`Question ${questionNumber} / ${totalQuestions}`}
                     </h2>
-                    <h3
-                        className="questionText"
-                    >
-                        {questionText}
-                    </h3>
+                    <h3 className="questionText">{questionText}</h3>
                 </div>
                 <div className="table red">
                     <ul className="grid-container">
                         {questionButtons}
                     </ul>
                 </div>
-
-
+                <div className="marginBottom">
+                    <div className=" container">
+                        <ul className="progressbar">
+                         {progressBar}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -156,6 +165,7 @@ const mapStateToProps = (state) => ({
     question: state.current_question,
     questionIndex: state.current_question_index,
     currentAnswers: state.user_answers,
+    questions: state.questions,
 });
 
 export default connect(mapStateToProps)(QuestionView);
