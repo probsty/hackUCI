@@ -7,6 +7,8 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NewPage from "./Containers/NewPage";
 
+import QuestionView from './Containers/QuestionView'
+
 function App() {
   return (
       <Provider store={store}>

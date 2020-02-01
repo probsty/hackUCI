@@ -1,8 +1,8 @@
 class Question {
-    constructor(id, text, answers) {
+    constructor(id, text, choices) {
         this.id = id;
         this.text = text;
-        this.answers = answers;
+        this.choices = choices;
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
+import '../Css/ButtonNeon.css'
 
 
 class QuestionView extends React.Component {
@@ -13,15 +13,29 @@ class QuestionView extends React.Component {
     render() {
         let question = this.props.question
         let totalQuestions = this.props.totalQuestions;
-        let choices = question.choices;
+        let choices = [
+            'Hello',
+            'Goodbye',
+            'Hot Pink',
+            "Hi I'm BLANK (HackUCI)"
+        ]
         let questionText = "How long is your commute?"
+        let questionButtons = choices.map((text, index) => {
+            return (
+                <li key={index}>
+                    <div
+                        className="button button-1"
+                    >
+                        {text}
+                    </div>
+                </li>
+            )
+        });
 
         return (
             <div>
                 <div>
-                    <h2
-                        className="textMainMessage AkzidenzGrotesk-BoldCond"
-                    >
+                    <h2 className="textMainMessage AkzidenzGrotesk-BoldCond">
                         Question 1/10
                     </h2>
                     <h3
@@ -30,13 +44,14 @@ class QuestionView extends React.Component {
                         {questionText}
                     </h3>
                 </div>
-                    <Button></Button>
-                    <Button></Button>
-                    <Button></Button>
-                    
-                <div>
+                <div className="">
+                    <ul className="choiceList">
+                        <div className="alignContent">
+                        {questionButtons}
+                        </div>
+                    </ul>
+                </div> 
 
-                </div>
                 
             </div>
         );
