@@ -5,9 +5,7 @@ import { persistor, store } from './store/configureStore';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import NewPage from "./Containers/NewPage";
-
-import QuestionView from './Containers/QuestionView'
+import QuestionView from "./Containers/QuestionView";
 
 function App() {
   return (
@@ -15,7 +13,7 @@ function App() {
           <PersistGate persistor={persistor} loading={""}>
               <Router basename="/">
                 <Route exact path="/" component={Introduction} />
-                  <Route exact path="/newPage" component={NewPage} />
+                  <Route exact path="/newPage" component={QuestionView} />
               </Router>
           </PersistGate>
       </Provider>

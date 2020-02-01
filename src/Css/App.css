@@ -19,7 +19,7 @@ body {
     margin-top: 20vh;
 }
 
-.alignContent {
+.alignStartContent {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,4 +35,9 @@ body {
 
 .choiceList {
     list-style: none;
+    background-color: blue;
+}
+
+.whiteText {
+    color: white;
 }
