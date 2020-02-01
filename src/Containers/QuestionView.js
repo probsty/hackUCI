@@ -126,9 +126,6 @@ class QuestionView extends React.Component {
             );
         }
 
-                                //<div className="filler-block button-1 buttonSecondary">T</div>
-
-
         return (
             <div>
                 <div className="navbar-container">

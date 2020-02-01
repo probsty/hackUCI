@@ -34,6 +34,17 @@ const userQuestions = [
             "sport?",
         ]
     ),
+
+    new Question(
+        3,
+        "What's your budget?",
+        [
+            "Less than $10,000",
+            "$10,000 - $50,000",
+            "$50,000 - $100,000",
+            "More than $100,000",
+        ]
+    ),
 ]
 
 export default userQuestions
