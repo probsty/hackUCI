@@ -37,7 +37,7 @@ class Introduction extends Component {
             test: "i show you an exemple",
         };
         dispatch(action);
-        this.changeRoute("/newPage")
+        this.changeRoute("/questions")
     }
 
     render() {

@@ -28,10 +28,9 @@ function service(state = initialState, action) {
     let nextState;
     switch (action.type) {
         case 'EXEMPLE':
-            nextState = {
-                test_test: action.test
-            };
-            return nextState;
+            return changeState(state, {
+                test_test: action.test,
+            });
         case actions.ANSWER_QUESTION:
             let newAnswers = Object.assign({}, state.user_answers)
             newAnswers[action.payload.question_id] = action.payload.answer;
