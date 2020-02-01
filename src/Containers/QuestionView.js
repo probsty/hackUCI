@@ -14,6 +14,7 @@ class QuestionView extends React.Component {
         }
 
         this.onSelectChoice = this.onSelectChoice.bind(this);
+        this.onBackButtonClick = this.onBackButtonClick.bind(this);
     }
 
     onSelectChoice(e) {
@@ -37,7 +38,16 @@ class QuestionView extends React.Component {
 
         dispatch(answerAction);
         dispatch(nextQuestionAction);
-        
+    }
+
+    onBackButtonClick(e) {
+        const { dispatch } = this.props;
+
+        const previousQuestionAction = {
+            type: actions.PREVIOUS_QUESTION,
+        }
+
+        dispatch(previousQuestionAction)
     }
 
     render() {
@@ -63,7 +73,12 @@ class QuestionView extends React.Component {
         return (
             <div>
                 <div>
-                    
+                    <div
+                        className="button-1 buttonSecondary"
+                        onClick={this.onBackButtonClick}
+                    >
+                        Previous
+                    </div>
                 </div>
                 <div>
                     <h2 className="textMainMessage AkzidenzGrotesk-BoldCond">

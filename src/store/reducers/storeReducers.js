@@ -47,7 +47,17 @@ function service(state = initialState, action) {
             } else {
                 let new_question_index = state.current_question_index + 1;
 
-                console.log("Getting NEXT QUESTION");
+                return changeState(state, {
+                    current_question : userQuestions[new_question_index],
+                    current_question_index : new_question_index,
+                });
+            }
+        case actions.PREVIOUS_QUESTION:
+            // Do nothing if already on first question
+            if (state.current_question_index <= 0) {
+                return state;
+            } else {
+                let new_question_index = state.current_question_index - 1;
 
                 return changeState(state, {
                     current_question : userQuestions[new_question_index],
