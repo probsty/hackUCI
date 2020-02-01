@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 
 
-class Question extends React.Component {
+class QuestionView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -43,4 +43,4 @@ class Question extends React.Component {
     }
 }
 
-export default Question;
+export default QuestionView;
