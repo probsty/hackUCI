@@ -12,8 +12,8 @@ function App() {
       <Provider store={store}>
           <PersistGate persistor={persistor} loading={""}>
               <Router basename="/">
-                <Route exact path="/" component={Introduction} />
-                  <Route exact path="/newPage" component={QuestionView} />
+                <Route exact path="/" component={QuestionView} />
+                  <Route exact path="/newPage" component={NewPage} />
               </Router>
           </PersistGate>
       </Provider>

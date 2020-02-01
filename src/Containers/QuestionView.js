@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import '../Css/ButtonNeon.css'
 import '../Css/GridList.css'
+import actions from '../store/action_types';
+import userQuestions from '../misc/userQuestions';
 
 
 class QuestionView extends React.Component {
@@ -9,24 +12,43 @@ class QuestionView extends React.Component {
         this.state = {
             questionArray: {}
         }
+
+        this.onSelectChoice = this.onSelectChoice.bind(this);
+    }
+
+    onSelectChoice(e) {
+        let userAnswer = e.target.textContent;
+        console.log(`User selected: ${userAnswer}`);
+        const { dispatch } = this.props;
+
+        const answerAction = {
+            type: actions.ANSWER_QUESTION,
+            answer: userAnswer,
+        };
+
+        const nextQuestionAction = {
+            type: actions.NEXT_QUESTION,
+        };
+
+        dispatch(answerAction);
+        dispatch(nextQuestionAction);
+        
     }
 
     render() {
-        let question = this.props.question
-        let totalQuestions = this.props.totalQuestions;
-        let choices = [
-            'Hello',
-            'Goodbye',
-            'Hot Pink',
-            "Hi I'm BLANK (HackUCI)",
-            'Hot Pink',
-            "Hi I'm BLANK (HackUCI)"
-        ]
-        let questionText = "How long is your commute?"
+        let question = this.props.question;
+        let questionNumber = this.props.questionIndex + 1;
+        let totalQuestions = userQuestions.length;
+        
+        let choices = question.choices;
+        let questionText = question.text;
         let questionButtons = choices.map((text, index) => {
             return (
                 <li className="grid-item" key={index}>
-                    <div className="buttonAnswer button-1">
+                    <div 
+                        className="buttonAnswer button-1"
+                        onClick={this.onSelectChoice}
+                    >
                         {text}
                     </div>
                 </li>
@@ -37,7 +59,7 @@ class QuestionView extends React.Component {
             <div>
                 <div>
                     <h2 className="textMainMessage AkzidenzGrotesk-BoldCond">
-                        Question 1/10
+                        {`Question ${questionNumber} / ${totalQuestions}`}
                     </h2>
                     <h3
                         className="questionText"
@@ -57,4 +79,9 @@ class QuestionView extends React.Component {
     }
 }
 
-export default QuestionView;
+const mapStateToProps = (state) => ({
+    question: state.current_question,
+    questionIndex: state.current_question_index
+});
+
+export default connect(mapStateToProps)(QuestionView);
