@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../Css/App.css';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import StartLogo from '../Assets/Images/start.jpg'
+import '../Css/ButtonNeon.css';
 
 class Introduction extends Component {
     constructor(props) {
@@ -19,7 +17,7 @@ class Introduction extends Component {
             <div>
                 <div>
                     <h1 className="textMainMessage AkzidenzGrotesk-BoldCond">We help you decide your next car purchase !</h1>
-                   
+                    <div className="button button-1 alignContent">Start</div>
                 </div>
             </div>
         );
