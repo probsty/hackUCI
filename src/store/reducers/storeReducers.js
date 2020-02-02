@@ -72,6 +72,11 @@ function service(state = initialState, action) {
 
         default:
             return state;
+        
+        case actions.GET_RESULTS:
+            return changeState(state, {
+                resultCars: action.payload,
+            })
     }
 }
 

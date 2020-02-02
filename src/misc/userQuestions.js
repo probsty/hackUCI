@@ -44,7 +44,7 @@ const userQuestions = [
     ),
 
     new Question(
-        "fuel_type",
+        "fuel",
         "What fuel type do your prefer?",
         [
             new Choice("Gas", "gas"),
@@ -72,17 +72,6 @@ const userQuestions = [
             new Choice("4", 4),
             new Choice("6", 6),
             new Choice("7", 7)
-        ]
-    ),
-
-    new Question(
-        4,
-        "What's your sdezzevzet?",
-        [
-            "A",
-            "B",
-            "C",
-            "D",
         ]
     ),
 

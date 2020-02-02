@@ -15,6 +15,10 @@ import Ferrari from "../Assets/Images/ferrari.jpg";
 import Hurracan from "../Assets/Images/hurracan.jpg";
 import R8 from "../Assets/Images/r8.jpg";
 import actions from "../store/action_types";
+import Link from '@material-ui/core/Link';
+
+const test_img = "https://upload.wikimedia.org/wikipedia/commons/7/77/2011_Nissan_Leaf_SL_--_10-28-2011.jpg"
+const test_website = "https://en.wikipedia.org/wiki/Car";
 
 class ResultsPage extends Component {
     constructor(props) {
@@ -46,7 +50,7 @@ class ResultsPage extends Component {
         history.push(e);
     }
 
-    displayCarCard(model, imgModel, description) {
+    displayCarCard(model, imgModel, description, website) {
         return (
             <Card>
                 <CardActionArea>
@@ -54,7 +58,7 @@ class ResultsPage extends Component {
                         component="img"
                         alt="Contemplative Reptile"
                         height="140"
-                        image={imgModel}
+                        src={imgModel}
                         title="Contemplative Reptile"
                     />
                     <CardContent>
@@ -70,21 +74,31 @@ class ResultsPage extends Component {
                     <Button size="small" color="primary">
                         Share
                     </Button>
-                    <Button size="small" color="primary">
+                    <Link href={website}>
                         Learn More
-                    </Button>
+                    </Link>
                 </CardActions>
             </Card>
         );
     }
 
     render() {
-        let car = [{model: "Ferrari California", img: Ferrari ,description: "The Ferrari California (Type F149) brzrere  rfzefrefez"},
-            {model: "Lamborghini Huracan", img: Hurracan ,description: "The Lamborghini Huracán is a sports dczeverv"},
-            {model: "Audi R8", img: R8 ,description: "The Audi R8 Coupe showcases its motorsport DNA while ceverver  ijreiferijgerji"}
+        let car = [{model: "Ferrari California", img: test_img ,description: "The Ferrari California (Type F149) brzrere  rfzefrefez"},
+            {model: "Lamborghini Huracan", img: test_img ,description: "The Lamborghini Huracán is a sports dczeverv"},
+            {model: "Audi R8", img: test_img ,description: "The Audi R8 Coupe showcases its motorsport DNA while ceverver  ijreiferijgerji"}
         ];
+
+        let car_results = this.props.result_list;
+        for (let i = 0; i < car_results.length; i++){
+            let current = car_results[i];
+            car_results[i]["description"] = "Make: " + current.make + "/Body Type: " + current.body_type + "/Price: $" + current.price;
+        }
+
+        car = car_results;
+        console.log(car_results);
+
         let cars = car.map((text, index) => {
-            return (<li className="alignResults">{this.displayCarCard(car[index].model, car[index].img, car[index].description )}</li>)
+            return (<li className="alignResults">{this.displayCarCard(car[index].model, car[index].img, car[index].description, car[index].website )}</li>)
         });
         let startAgain = undefined;
         startAgain = (
@@ -103,7 +117,7 @@ class ResultsPage extends Component {
                         {startAgain}
                     </div>
                 </div>
-                <h1 className="textEndMessage AkzidenzGrotesk-BoldCond">Cars made for you !</h1>
+                <h1 className="textEndMessage AkzidenzGrotesk-BoldCond">Here Are Some Cars Made For You!</h1>
                 <div className="table">
                     <ul className="grid-container">
                         {cars}
@@ -119,6 +133,7 @@ class ResultsPage extends Component {
 * */
 const mapStateToProps = (state) => ({
     test_test: state.test_test,
+    result_list: state.resultCars
 });
 
 export default connect(mapStateToProps)(ResultsPage);

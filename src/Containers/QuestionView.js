@@ -29,6 +29,34 @@ class QuestionView extends React.Component {
         history.push(e);
     }
 
+    processAnswers() {
+        const url = 'http://localhost:5000/'
+        const data = this.props.currentAnswers;
+
+        console.log('Sending request');
+
+        fetch (url, {
+            method: 'POST', 
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        })
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
+        .then((data) => {
+            let results = data["cars"];
+            console.log(results);
+
+            const { dispatch } = this.props;
+            dispatch({type: actions.GET_RESULTS, payload: results})
+            return true;
+        })
+    }
+
     onSelectChoice(e) {
         let userAnswer = e.target.dataset["value"];
         console.log(`User selected: ${userAnswer}`);
@@ -58,6 +86,8 @@ class QuestionView extends React.Component {
 
     onNextButton(e) {
         if (this.props.questionIndex === this.props.questions.length - 1) {
+            console.log('test');
+            this.processAnswers();
             this.changeRoute("results");
         } else {
             const {dispatch} = this.props;
