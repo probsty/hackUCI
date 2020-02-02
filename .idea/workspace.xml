@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57e3e4df-7d98-458d-a496-df8e9de7a9c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Assets/Images/ferrari.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Images/hurracan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Images/r8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Containers/ResultsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Css/Card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Css/ButtonNeon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Css/ButtonNeon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/QuestionView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/QuestionView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Css/GridList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Css/GridList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/misc/userQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc/userQuestions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -73,8 +82,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="npm.npm start" />
       <item itemvalue="npm.start" />
+      <item itemvalue="npm.npm start" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -102,7 +111,8 @@
       <workItem from="1580527388022" duration="4184000" />
       <workItem from="1580532232060" duration="7090000" />
       <workItem from="1580542776585" duration="3884000" />
-      <workItem from="1580583256402" duration="7680000" />
+      <workItem from="1580583256402" duration="15784000" />
+      <workItem from="1580601044554" duration="2209000" />
     </task>
     <servers />
   </component>
@@ -122,29 +132,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580535722043" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580540826035">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580597272018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580540826035" />
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580587673086">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580597272018" />
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom" timestamp="1580603165489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
-    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580587673086">
+    <state width="1515" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580603165489" />
+    <state width="1515" height="207" key="GridCell.Tab.0.center" timestamp="1580603165489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
-    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580587673086">
+    <state width="1515" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580603165489" />
+    <state width="1515" height="207" key="GridCell.Tab.0.left" timestamp="1580603165489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
-    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580587673086">
+    <state width="1515" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580603165489" />
+    <state width="1515" height="207" key="GridCell.Tab.0.right" timestamp="1580603165489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580587673086" />
-    <state x="462" y="144" width="611" height="536" key="find.popup" timestamp="1580587586000">
+    <state width="1515" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580603165489" />
+    <state x="462" y="144" width="611" height="536" key="find.popup" timestamp="1580602938216">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="462" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580587586000" />
+    <state x="462" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580602938216" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1580594809992">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1580594809992" />
   </component>
 </project>

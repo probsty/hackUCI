@@ -2,11 +2,15 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
-    padding: 10px;
 }
 .grid-item {
-    padding: 20px;
     font-size: 30px;
     text-align: center;
 }
 
+.alignResults {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 2%;
+}

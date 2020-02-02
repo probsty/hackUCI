@@ -6,7 +6,6 @@ import '../Css/ProgressBar.css'
 import actions from '../store/action_types';
 import userQuestions from '../misc/userQuestions';
 
-
 class QuestionView extends React.Component {
     constructor(props) {
         super(props)
@@ -17,7 +16,17 @@ class QuestionView extends React.Component {
         this.onSelectChoice = this.onSelectChoice.bind(this);
         this.onBackButton = this.onBackButton.bind(this);
         this.onNextButton = this.onNextButton.bind(this);
+        this.changeRoute = this.changeRoute.bind(this);
 
+    }
+
+    /* Change the route of the web page
+    * the argument is the /newPath
+    * */
+    changeRoute(e) {
+        const { history } = this.props;
+
+        history.push(e);
     }
 
     onSelectChoice(e) {
@@ -48,13 +57,15 @@ class QuestionView extends React.Component {
     }
 
     onNextButton(e) {
-        const { dispatch } = this.props;
+        console.log(this.props.questions.length);
+            const {dispatch} = this.props;
 
-        const nextQuestionAction = {
-            type: actions.NEXT_QUESTION,
-        }
+            const nextQuestionAction = {
+                type: actions.NEXT_QUESTION,
+            }
 
-        dispatch(nextQuestionAction)
+            dispatch(nextQuestionAction)
+
     }
 
     onBackButton(e) {
@@ -95,7 +106,7 @@ class QuestionView extends React.Component {
             )
         });
         let progressBar = this.props.questions.map((text, index) => {
-            if (index + 1 <= this.props.questionIndex) {
+            if (index + 1 <= this.props.questions.map.length) {
                 return (<li className="active" key={index + 1}/>)
             } else {
                 return (<li key={index + 1}/>)
@@ -141,7 +152,7 @@ class QuestionView extends React.Component {
                     </h2>
                     <h3 className="questionText">{questionText}</h3>
                 </div>
-                <div className="table red">
+                <div className="table">
                     <ul className="grid-container">
                         {questionButtons}
                     </ul>

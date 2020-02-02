@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import QuestionView from "./Containers/QuestionView";
+import ResultsPage from "./Containers/ResultsPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
               <Router basename="/">
                 <Route exact path="/" component={Introduction} />
                 <Route exact path="/questions" component={QuestionView} />
+                  <Route exact path="/results" component={ResultsPage} />
               </Router>
           </PersistGate>
       </Provider>
