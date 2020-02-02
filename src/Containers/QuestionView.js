@@ -57,15 +57,15 @@ class QuestionView extends React.Component {
     }
 
     onNextButton(e) {
-        console.log(this.props.questions.length);
+        if (this.props.questionIndex === this.props.questions.length - 1) {
+            this.changeRoute("results");
+        } else {
             const {dispatch} = this.props;
-
             const nextQuestionAction = {
                 type: actions.NEXT_QUESTION,
-            }
-
+            };
             dispatch(nextQuestionAction)
-
+        }
     }
 
     onBackButton(e) {
@@ -106,7 +106,7 @@ class QuestionView extends React.Component {
             )
         });
         let progressBar = this.props.questions.map((text, index) => {
-            if (index + 1 <= this.props.questions.map.length) {
+            if (index + 1 <= this.props.questionIndex) {
                 return (<li className="active" key={index + 1}/>)
             } else {
                 return (<li key={index + 1}/>)
@@ -160,7 +160,7 @@ class QuestionView extends React.Component {
                 <div className="marginBottom">
                     <div className=" container">
                         <ul className="progressbar">
-                         {progressBar}
+                            {progressBar}
                         </ul>
                     </div>
                 </div>

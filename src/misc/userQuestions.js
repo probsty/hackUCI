@@ -48,12 +48,12 @@ const userQuestions = [
 
     new Question(
         4,
-        "What's your budget?",
+        "What's your sdezzevzet?",
         [
-            "Less than $10,000",
-            "$10,000 - $50,000",
-            "$50,000 - $100,000",
-            "More than $100,000",
+            "A",
+            "B",
+            "C",
+            "D",
         ]
     ),
 

@@ -27,9 +27,15 @@ const initialState = {
 function service(state = initialState, action) {
     let nextState;
     switch (action.type) {
-        case 'EXEMPLE':
+        case actions.REMOVE_REDUX:
             return changeState(state, {
-                test_test: action.test,
+                test_test: "",
+                // user_answers object is a "dictionary" where {question_id: user's answer}
+                user_answers: {},
+                current_question: userQuestions[0],
+                current_question_index: 0,
+                questions: userQuestions,
+                resultCars: [],
             });
         case actions.ANSWER_QUESTION:
             let newAnswers = Object.assign({}, state.user_answers)

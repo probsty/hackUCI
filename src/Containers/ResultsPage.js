@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Ferrari from "../Assets/Images/ferrari.jpg";
 import Hurracan from "../Assets/Images/hurracan.jpg";
 import R8 from "../Assets/Images/r8.jpg";
+import actions from "../store/action_types";
 
 class ResultsPage extends Component {
     constructor(props) {
@@ -23,7 +24,26 @@ class ResultsPage extends Component {
         };
 
         this.displayCarCard = this.displayCarCard.bind(this);
+        this.changeRoute = this.changeRoute.bind(this);
+        this.restart = this.restart.bind(this);
+    }
 
+    restart() {
+        const {dispatch} = this.props;
+        const nextQuestionAction = {
+            type: actions.REMOVE_REDUX,
+        };
+        dispatch(nextQuestionAction);
+        this.changeRoute("/")
+    }
+
+    /* Change the route of the web page
+    * the argument is the /newPath
+    * */
+    changeRoute(e) {
+        const { history } = this.props;
+
+        history.push(e);
     }
 
     displayCarCard(model, imgModel, description) {
@@ -66,9 +86,23 @@ class ResultsPage extends Component {
         let cars = car.map((text, index) => {
             return (<li className="alignResults">{this.displayCarCard(car[index].model, car[index].img, car[index].description )}</li>)
         });
+        let startAgain = undefined;
+        startAgain = (
+            <div
+                className="button-1 buttonSecondary alignRight rightCorner"
+                onClick={() => { this.restart() }}
+            >
+                Restart
+            </div>
+        );
 
         return (
             <div>
+                <div className="navbar-container">
+                    <div className="navbar">
+                        {startAgain}
+                    </div>
+                </div>
                 <h1 className="textEndMessage AkzidenzGrotesk-BoldCond">Cars made for you !</h1>
                 <div className="table">
                     <ul className="grid-container">
