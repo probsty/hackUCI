@@ -30,7 +30,7 @@ class QuestionView extends React.Component {
     }
 
     onSelectChoice(e) {
-        let userAnswer = e.target.textContent;
+        let userAnswer = e.target.dataset["value"];
         console.log(`User selected: ${userAnswer}`);
         const { dispatch } = this.props;
 
@@ -85,12 +85,12 @@ class QuestionView extends React.Component {
 
         let choices = question.choices;
         let questionText = question.text;
-        let questionButtons = choices.map((text, index) => {
+        let questionButtons = choices.map((choice, index) => {
 
             let baseClassName = "buttonAnswer button-1";
 
             // Highlight selected choice
-            if (text === this.props.currentAnswers[this.props.question.id]) {
+            if (choice.value === this.props.currentAnswers[this.props.question.id]) {
                 baseClassName += " selectedChoice";
             }
 
@@ -99,12 +99,14 @@ class QuestionView extends React.Component {
                     <div
                         className={baseClassName}
                         onClick={this.onSelectChoice}
+                        data-value={choice.value}
                     >
-                        {text}
+                        {choice.text}
                     </div>
                 </li>
             )
         });
+
         let progressBar = this.props.questions.map((text, index) => {
             if (index + 1 <= this.props.questionIndex) {
                 return (<li className="active" key={index + 1}/>)
